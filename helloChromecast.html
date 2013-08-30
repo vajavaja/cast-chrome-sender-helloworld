@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app data-cast-api-enabled="true">
+<head>
+<title>Cast Web/Chrome Sender API Demo</title>
+<link rel="stylesheet" type="text/css" href="demo_app.css">
+<script src="helloChromecast.js"></script>
+</head>
+<body>
+  <div>
+    <div>
+      <h2 style="display:block">This sample shows how to cast media to Chromcast device on TV</h2>
+      <div>
+        <h3 style="display: inline-block">Select media to cast</h3>
+        <select onchange="selectMedia(this.options[this.selectedIndex].value);">
+           <option value='http://commondatastorage.googleapis.com/gtv-videos-bucket/big_buck_bunny_1080p.mp4'>Big buck Bunny MP4</option>
+           <option value='http://commondatastorage.googleapis.com/gtv-videos-bucket/ED_1280.mp4'>Elephants Dream MP4</option>
+           <option value='http://commondatastorage.googleapis.com/gtv-videos-bucket/tears_of_steel_1080p.mov'>Tears of Steel MOV</option>
+           <option value='http://commondatastorage.googleapis.com/gtv-videos-bucket/reel_2012_1280x720.mp4'>Reel MP4</option>
+           <option value='http://commondatastorage.googleapis.com/gtv-videos-bucket/Google%20IO%202011%2045%20Min%20Walk%20Out.mp3'>Google I/O 2011 MP3</option>
+        </select>
+      </div>
+      <video id="video" controls width="468" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/big_buck_bunny_1080p.mp4"></video>
+      <div>
+        <h3>Select a device to cast this media:</h3>
+        <div id='receivers'>
+        </div>
+      </div>
+
+      <div id="media_control" style="float:left; display:none; width:90%;">
+        <h3>Remote controls</h3>
+        <button onclick="stopActivity()">Stop</button>
+        <button onclick="playMedia()">Play</button>
+        <button onclick="pauseMedia()">Pause</button>
+        <button onclick="muteMedia()">Mute</button>
+        <button onclick="unmuteMedia()">Unmute</button>
+        <input id="volume" min="0" max="10" value="5" type="number" size="11" onchange='changeVolume();'>Volume</input>
+        <div>
+          <button onclick="getActivityStatus()">Get Activity Status</button>
+          <span id="activity_status"></span>
+        </div>
+        <div>
+          <button onclick="getMediaStatus()">Get Media Status</button>
+          <span id="media_status"></span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

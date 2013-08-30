@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app data-cast-api-enabled="true">
+<head>
+<title>Cast Web/Chrome Sender API Demo</title>
+<link rel="stylesheet" type="text/css" href="demo_app.css">
+<script src="helloWorld.js"></script>
+</head>
+<body>
+  <div>
+    <div>
+      <h2 style="display:block">This is a Hello World sample for casting media to Chromcast device on TV</h2>
+      <div style="float:left; width:100%; margin:10px;">
+        <h3 id="receiver_msg"></h3>
+        <div id='receivers'>
+        </div>
+      </div>
+      <br>
+      <h3 style="display: inline-block">Select a media</h3>
+      <div style="clear:both;">
+           <input type="radio" checked name="media" onclick="selectMedia(0);">Big buck Bunny MP4<br>
+           <input type="radio" name="media" onclick="selectMedia(1);">Elephants Dream MP4<br>
+           <input type="radio" name="media" onclick="selectMedia(2);">Tears of Steel MOV<br>
+           <input type="radio" name="media" onclick="selectMedia(3);">Reel MP4<br>
+           <input type="radio" name="media" onclick="selectMedia(4);">Google I/O 2011 MP3<br>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
